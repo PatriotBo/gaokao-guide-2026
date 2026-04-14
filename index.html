@@ -114,6 +114,28 @@ body {
   color: var(--blue);
   border: 1px solid rgba(59,130,246,0.3);
 }
+.card.quiz::before { background: linear-gradient(90deg, var(--green), #34d399); }
+.card.quiz:hover { border-color: rgba(16,185,129,0.4); }
+.card.quiz .card-badge {
+  background: rgba(16,185,129,0.15);
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+.section-label {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  padding-left: 4px;
+}
+.section-label span {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 .footer {
   margin-top: 48px;
   text-align: center;
@@ -156,16 +178,29 @@ body {
   </div>
 </div>
 
+<div class="section-label"><span>📋 第一步 · 了解考生</span></div>
+
+<div class="cards">
+  <a class="card quiz" href="questionnaire.html">
+    <div class="card-icon">🎯</div>
+    <div class="card-title">志愿填报摸底问卷</div>
+    <div class="card-desc">仿照张雪峰老师方法论，通过10个关键问题了解考生的家庭条件、性格、兴趣、就业期望等底层需求，再给出真正适合的推荐。</div>
+    <span class="card-badge">⚡ 推荐先做这个</span>
+  </a>
+</div>
+
+<div class="section-label"><span>📊 第二步 · 查看推荐报告</span></div>
+
 <div class="cards">
   <a class="card web" href="guide.html">
     <div class="card-icon">🌐</div>
-    <div class="card-title">网页版（推荐）</div>
+    <div class="card-title">网页版报告（推荐）</div>
     <div class="card-desc">精心设计的可视化报告，包含成绩分析图表、院校对比表格、冲-稳-保策略卡片，手机和电脑都能完美浏览。</div>
     <span class="card-badge">📱 手机友好 · 可视化强</span>
   </a>
   <a class="card doc" href="https://github.com/PatriotBo/gaokao-guide-2026/blob/main/README.md" target="_blank">
     <div class="card-icon">📄</div>
-    <div class="card-title">文档版</div>
+    <div class="card-title">文档版报告</div>
     <div class="card-desc">Markdown 格式的完整文档，适合打印或在 GitHub 上直接阅读，内容与网页版一致。</div>
     <span class="card-badge">📋 可打印 · 易收藏</span>
   </a>
