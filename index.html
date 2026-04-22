@@ -121,6 +121,19 @@ body {
   color: var(--green);
   border: 1px solid rgba(16,185,129,0.3);
 }
+.card.v2::before { background: linear-gradient(90deg, #f72585, #b5179e); }
+.card.v2:hover { border-color: rgba(247,37,133,0.4); }
+.card.v2 .card-badge {
+  background: rgba(247,37,133,0.15);
+  color: #f72585;
+  border: 1px solid rgba(247,37,133,0.3);
+}
+.card .new-tag {
+  position: absolute; top: 12px; right: 12px;
+  background: linear-gradient(135deg, #f72585, #b5179e);
+  color: #fff; font-size: 0.7em; font-weight: 700;
+  padding: 2px 10px; border-radius: 100px;
+}
 .section-label {
   width: 100%;
   max-width: 800px;
@@ -192,9 +205,16 @@ body {
 <div class="section-label"><span>📊 第二步 · 查看推荐报告</span></div>
 
 <div class="cards">
+  <a class="card v2" href="report-v2.html" style="position:relative">
+    <span class="new-tag">NEW ✨</span>
+    <div class="card-icon">🚀</div>
+    <div class="card-title">V2 深度推荐报告（AI 生成）</div>
+    <div class="card-desc">志选 ZhiXuan AI 根据问卷结果一对一生成的深度报告：6大专业详解 + 18所院校卡片 + 冲稳保策略 + 就业薪资数据 + 行动清单。</div>
+    <span class="card-badge">🔥 最新 · AI 深度分析</span>
+  </a>
   <a class="card web" href="guide.html">
     <div class="card-icon">🌐</div>
-    <div class="card-title">网页版报告（推荐）</div>
+    <div class="card-title">V1 网页版报告</div>
     <div class="card-desc">精心设计的可视化报告，包含成绩分析图表、院校对比表格、冲-稳-保策略卡片，手机和电脑都能完美浏览。</div>
     <span class="card-badge">📱 手机友好 · 可视化强</span>
   </a>
