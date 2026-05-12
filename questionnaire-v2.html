@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考志愿摸底问卷 V2 · 张雪峰方法论 · 20题完整版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --paper: #f5f0e8;
+  --accent: #c0392b;
+  --accent-light: #e74c3c;
+  --gold: #d4a843;
+  --gold-light: #f0d78c;
+  --sage: #5d7a64;
+  --sage-light: #8fb396;
+  --blue-ink: #2c3e6b;
+  --warm-gray: #8a7e72;
+  --card-bg: #faf7f2;
+  --shadow: rgba(26, 26, 46, 0.08);
+  --shadow-deep: rgba(26, 26, 46, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  padding: 80px 24px 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #1a1a2e 0%, #2c3e6b 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0; right: 0;
+  height: 60px;
+  background: var(--paper);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--gold-light);
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+.hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+.hero h1 span { color: var(--gold-light); }
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.hero-quote {
+  display: inline-block;
+  padding: 14px 28px;
+  background: rgba(212, 168, 67, 0.15);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  font-style: italic;
+  max-width: 480px;
+}
+
+/* ===== Progress ===== */
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 240, 232, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 16px 24px;
+  transition: box-shadow 0.3s;
+}
+.progress-wrap.scrolled { box-shadow: 0 2px 20px var(--shadow); }
+.progress-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.progress-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--warm-gray);
+  white-space: nowrap;
+  min-width: 80px;
+}
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.progress-count {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* ===== Main ===== */
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 100px;
+}
+
+/* ===== Intro Card ===== */
+.intro-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+.intro-card h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--blue-ink);
+}
+.intro-card p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 12px;
+}
+.intro-card .highlight { color: var(--accent); font-weight: 600; }
+.intro-dimensions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+.dim-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.dim-tag .icon { font-size: 1.1rem; }
+
+/* ===== Section Header ===== */
+.section-block { margin-bottom: 16px; }
+.section-header {
+  margin-bottom: 32px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, rgba(44, 62, 107, 0.06) 0%, rgba(212, 168, 67, 0.06) 100%);
+  border-radius: 16px;
+  border-left: 4px solid var(--blue-ink);
+}
+.section-header h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--blue-ink);
+  margin-bottom: 8px;
+}
+.section-header p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* ===== Question card ===== */
+.q-section {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+.q-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.q-card:hover { box-shadow: 0 8px 32px var(--shadow-deep); }
+.q-card.answered { border-color: var(--sage-light); }
+.q-card.answered .q-header { background: linear-gradient(135deg, #5d7a64 0%, #4a6b52 100%); }
+.q-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, var(--blue-ink) 0%, #1a1a2e 100%);
+  color: #fff;
+  transition: background 0.4s;
+}
+.q-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.q-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  flex: 1;
+}
+.q-optional {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.q-check-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.q-card.answered .q-check-icon { opacity: 1; background: rgba(255,255,255,0.3); }
+.q-body { padding: 24px; }
+.q-why {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(212, 168, 67, 0.08);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #666;
+}
+.q-why .why-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+
+/* ===== Options ===== */
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: white;
+  border: 2px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s;
+  user-select: none;
+}
+.option:hover { border-color: var(--blue-ink); background: rgba(44, 62, 107, 0.03); transform: translateX(4px); }
+.option.selected { border-color: var(--accent); background: rgba(192, 57, 43, 0.04); }
+.option-radio {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s;
+}
+.option.selected .option-radio { border-color: var(--accent); background: var(--accent); }
+.option.selected .option-radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: white; }
+.option-checkbox {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s;
+  font-size: 0.75rem;
+  color: transparent;
+}
+.option.selected .option-checkbox { border-color: var(--accent); background: var(--accent); color: white; }
+.option-text { font-size: 0.95rem; line-height: 1.5; color: var(--ink); }
+.option-desc { font-size: 0.8rem; color: #999; margin-top: 2px; }
+
+/* ===== Textarea ===== */
+.text-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 16px;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: white;
+  resize: vertical;
+  transition: border-color 0.3s;
+  outline: none;
+  box-sizing: border-box;
+}
+.text-input:focus { border-color: var(--blue-ink); }
+.text-input::placeholder { color: #bbb; }
+
+/* ===== Short Input ===== */
+.input-wrap { display: flex; flex-direction: column; gap: 8px; }
+.short-input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: white;
+  transition: border-color 0.3s;
+  outline: none;
+  box-sizing: border-box;
+}
+.short-input:focus { border-color: var(--blue-ink); }
+.short-input::placeholder { color: #bbb; }
+.input-hint { font-size: 0.8rem; color: #999; padding-left: 4px; }
+
+/* ===== Select ===== */
+.select-wrap { position: relative; }
+.custom-select {
+  width: 100%;
+  padding: 14px 44px 14px 18px;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: white;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.custom-select:focus { border-color: var(--blue-ink); }
+
+/* ===== Score Table ===== */
+.score-table-wrap { display: flex; flex-direction: column; gap: 16px; }
+.table-guide {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(93, 122, 100, 0.08);
+  border-left: 3px solid var(--sage);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #666;
+}
+.table-guide .guide-icon { flex-shrink: 0; margin-top: 2px; }
+.score-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.score-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.score-table thead {
+  background: linear-gradient(135deg, var(--blue-ink) 0%, #1a1a2e 100%);
+  color: white;
+}
+.score-table th {
+  padding: 12px 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.score-table th.th-exam { min-width: 120px; text-align: left; padding-left: 14px; }
+.score-table td {
+  padding: 6px 4px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.score-table tbody tr:hover { background: rgba(44, 62, 107, 0.02); }
+.score-input {
+  width: 100%;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.88rem;
+  color: var(--ink);
+  background: rgba(0,0,0,0.02);
+  text-align: center;
+  transition: all 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+.score-input.exam-name-input { text-align: left; padding-left: 10px; }
+.score-input:focus { border-color: var(--blue-ink); background: white; box-shadow: 0 0 0 3px rgba(44, 62, 107, 0.1); }
+.score-input::placeholder { color: #c0c0c0; font-size: 0.8rem; }
+.score-note { font-size: 0.82rem; color: #999; line-height: 1.6; }
+
+/* ===== Submit ===== */
+.submit-area {
+  margin-top: 48px;
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+.submit-area h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--blue-ink);
+  margin-bottom: 12px;
+}
+.submit-area p { font-size: 0.9rem; color: #888; margin-bottom: 28px; }
+.submit-hint { margin-top: 16px; font-size: 0.8rem; color: #aaa; }
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 48px;
+  background: linear-gradient(135deg, var(--accent) 0%, #a93226 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.3);
+}
+.btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192, 57, 43, 0.4); }
+.btn-submit:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; transform: none; }
+.btn-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  background: white;
+  color: var(--blue-ink);
+  border: 2px solid var(--blue-ink);
+  border-radius: 12px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-left: 12px;
+}
+.btn-copy:hover { background: var(--blue-ink); color: white; }
+
+/* ===== Result ===== */
+.result-area {
+  display: none;
+  margin-top: 48px;
+  padding: 32px;
+  background: var(--card-bg);
+  border: 2px solid var(--sage-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+.result-area.show { display: block; animation: fadeUp 0.5s ease; }
+.result-area h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.result-content {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: #444;
+  white-space: pre-wrap;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.result-actions { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ===== Footer ===== */
+.site-footer {
+  width: 100%;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .hero { padding: 60px 20px 48px; }
+  .hero h1 { font-size: 1.8rem; }
+  .q-body { padding: 20px; }
+  .intro-card { padding: 24px; }
+  .intro-dimensions { grid-template-columns: 1fr 1fr; }
+  .btn-submit { padding: 14px 36px; font-size: 1rem; }
+  .result-actions { flex-direction: column; }
+  .btn-copy { margin-left: 0; }
+  .section-header { padding: 20px 22px; }
+  .section-header h2 { font-size: 1.05rem; }
+  .score-table { font-size: 0.8rem; }
+  .score-input { padding: 8px 6px; font-size: 0.8rem; }
+}
+
+/* staggered */
+.q-section:nth-child(1) { animation-delay: 0.05s; }
+.q-section:nth-child(2) { animation-delay: 0.1s; }
+.q-section:nth-child(3) { animation-delay: 0.15s; }
+.q-section:nth-child(4) { animation-delay: 0.2s; }
+.q-section:nth-child(5) { animation-delay: 0.25s; }
+.q-section:nth-child(6) { animation-delay: 0.3s; }
+.q-section:nth-child(7) { animation-delay: 0.35s; }
+.q-section:nth-child(8) { animation-delay: 0.4s; }
+.q-section:nth-child(9) { animation-delay: 0.45s; }
+.q-section:nth-child(10) { animation-delay: 0.5s; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">📋 志愿填报 · 第一步（完整版）</div>
+  <h1>先别急着选专业<br>让我们<span>聊聊你</span></h1>
+  <p class="hero-sub">
+    仿照张雪峰老师的方法论——推荐专业之前，先摸清考生的底层需求。<br>
+    以下 20 个问题，帮助我们全面了解你的真实情况，再给出真正适合你的建议。
+  </p>
+  <div class="hero-quote">
+    "没有最好的专业，只有最适合的方向。选择大于努力。"<br>——张雪峰
+  </div>
+</section>
+
+<!-- Progress -->
+<div class="progress-wrap" id="progressWrap">
+  <div class="progress-inner">
+    <span class="progress-label">完成进度</span>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-count" id="progressCount">0/20</span>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Intro -->
+  <div class="intro-card">
+    <h2>🎯 为什么要先做这份问卷？</h2>
+    <p>张雪峰老师常说：<span class="highlight">"同样的分数，因为家庭条件、性格、就业意愿不同，最适合的专业可能完全不一样。"</span></p>
+    <p>这份问卷从以下维度全面了解你，每个问题都有明确的用途：</p>
+    <div class="intro-dimensions">
+      <div class="dim-tag"><span class="icon">📋</span>基本信息</div>
+      <div class="dim-tag"><span class="icon">📊</span>学业成绩</div>
+      <div class="dim-tag"><span class="icon">💰</span>家庭条件</div>
+      <div class="dim-tag"><span class="icon">🏙️</span>地域意愿</div>
+      <div class="dim-tag"><span class="icon">🧠</span>性格特质</div>
+      <div class="dim-tag"><span class="icon">💪</span>身体条件</div>
+      <div class="dim-tag"><span class="icon">🎯</span>就业期望</div>
+      <div class="dim-tag"><span class="icon">📚</span>深造意愿</div>
+      <div class="dim-tag"><span class="icon">⭐</span>兴趣倾向</div>
+      <div class="dim-tag"><span class="icon">🚫</span>底线排除</div>
+      <div class="dim-tag"><span class="icon">💭</span>生涯愿景</div>
+    </div>
+  </div>
+
+  <!-- Questions -->
+  <div id="questionsContainer"></div>
+
+  <!-- Submit -->
+  <div class="submit-area" id="submitArea">
+    <h3>📝 提交问卷，生成考生画像</h3>
+    <p>完成以上必填问题后，点击下方按钮生成完整的考生画像报告。标注"选填"的题目可以跳过。</p>
+    <button class="btn-submit" id="btnSubmit" disabled>
+      <span>✨</span>
+      <span>生成考生画像</span>
+    </button>
+    <p class="submit-hint" id="submitHint"></p>
+  </div>
+
+  <!-- Result -->
+  <div class="result-area" id="resultArea">
+    <h3>📊 考生画像报告（完整版）</h3>
+    <div class="result-content" id="resultContent"></div>
+    <div class="result-actions">
+      <button class="btn-submit" onclick="copyResult()">📋 复制报告文字</button>
+      <button class="btn-copy" onclick="window.print()">🖨️ 打印 / 保存PDF</button>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p>志选 ZhiXuan © 2026 · AI 高考方向推荐系统 · 20题完整版</p>
+</footer>
+
+<script>
+// ===== Sections =====
+const sections = [
+  { id: 'basic', title: '📋 第一部分：基本信息', subtitle: '让我们先了解你的基本情况，这些信息将帮助我们更准确地为你推荐。' },
+  { id: 'scores', title: '📊 第二部分：学业成绩', subtitle: '近几次考试的成绩能帮我们了解你的学科优势，别担心分数高低——我们关注的是你的强项在哪里。' },
+  { id: 'self', title: '🧭 第三部分：认识你自己', subtitle: '很多同学对自己的认识还不够清晰——没关系，下面这些问题会一步步引导你思考，帮你找到属于自己的方向。' },
+  { id: 'open', title: '💬 第四部分：补充说明', subtitle: '每个人都是独特的，有些重要信息可能在前面的选项里没有覆盖到。' }
+];
+
+// ===== Questions =====
+const questions = [
+  // Part 1: Basic
+  {
+    id: 'province', num: 1, title: '你所在的省份是？',
+    why: '不同省份的高考政策、录取分数线、可报考的院校差异很大。确定省份是志愿填报的第一步。',
+    type: 'select', section: 'basic',
+    options: ['北京','天津','河北','山西','内蒙古','辽宁','吉林','黑龙江','上海','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','广西','海南','重庆','四川','贵州','云南','西藏','陕西','甘肃','青海','宁夏','新疆'].map(p => ({ value: p, label: p }))
+  },
+  {
+    id: 'school', num: 2, title: '你就读的学校名称？',
+    why: '了解你所在的学校层次，有助于我们估算你在本省的大致竞争位置。',
+    type: 'input', section: 'basic', placeholder: '例如：邢台市第一中学', inputHint: '填写完整校名'
+  },
+  {
+    id: 'gender', num: 3, title: '你的性别是？',
+    why: '部分专业和岗位对性别有实际要求或偏好（如矿业、护理、学前教育等），了解性别有助于规避"入学容易就业难"的坑。',
+    type: 'single', section: 'basic',
+    options: [{ value: 'male', label: '男' }, { value: 'female', label: '女' }]
+  },
+  {
+    id: 'exam_type', num: 4, title: '你的高考模式是？',
+    why: '不同高考模式决定了你能报考的专业范围和竞争人群，这是志愿填报的基本前提。',
+    type: 'single', section: 'basic',
+    options: [
+      { value: 'new_3+1+2', label: '新高考 3+1+2', desc: '语数外必考 + 物理/历史二选一 + 其余四科选二' },
+      { value: 'new_3+3', label: '新高考 3+3', desc: '语数外必考 + 六科任选三' },
+      { value: 'old_wenli', label: '传统文理分科', desc: '文科或理科' },
+      { value: 'vocational', label: '职教高考/对口升学', desc: '中职对口单招或职教高考' }
+    ]
+  },
+  {
+    id: 'subjects', num: 5, title: '你选择的高考科目是哪些？（可多选）',
+    why: '选科直接决定了你能报考哪些专业。比如不选物理，工科大部分专业就报不了。',
+    type: 'multi', section: 'basic',
+    options: ['语文','数学','英语','物理','化学','生物','历史','地理','政治','技术（浙江）'].map(s => ({ value: s, label: s }))
+  },
+  {
+    id: 'score_level', num: 6, title: '你目前的大致成绩段位是？',
+    why: '张雪峰说过："400分和600分的填报策略完全不同。"分数段决定了可选范围。',
+    type: 'single', section: 'basic',
+    options: [
+      { value: 'top', label: '一本线以上 / 特招线以上', desc: '有较大选择空间' },
+      { value: 'first', label: '一本线附近 / 特招线附近', desc: '需要在好学校和好专业之间做选择' },
+      { value: 'second', label: '二本线上下', desc: '选校不如选专业，就业导向更重要' },
+      { value: 'third', label: '专科段 / 300-400 分', desc: '技术类专业是王道' },
+      { value: 'low', label: '300 分以下', desc: '主攻实用技术方向' }
+    ]
+  },
+
+  // Part 2: Scores
+  {
+    id: 'score_table', num: 7, title: '请填写你近几次重要考试的各科成绩',
+    why: '我们不是要用成绩来"评判"你，而是要找到你的学科优势。也许你总分一般，但某一科特别突出——这恰好就是选专业的突破口。',
+    type: 'score_table', section: 'scores',
+    tableGuide: '填写 1-3 次考试成绩即可（如最近的月考、期中、期末），不记得精确分数写个大概就行。'
+  },
+
+  // Part 3: Self
+  {
+    id: 'family', num: 8, title: '家庭经济条件和社会资源如何？',
+    why: '张雪峰反复强调：普通家庭"输不起"，选专业要选"确定性"强的方向。家庭条件决定了能承受的试错成本。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'modest', label: '普通家庭', desc: '父母务工或务农，供一个大学生已有压力，没有特殊社会关系' },
+      { value: 'middle', label: '小康家庭', desc: '父母有稳定工作，能承受学费和基本生活费' },
+      { value: 'good', label: '条件较好', desc: '家里有一定积蓄或生意，能支持较长学制或留学' }
+    ]
+  },
+  {
+    id: 'city', num: 9, title: '毕业后想在哪里工作和生活？',
+    why: '张雪峰的优先级是"城市 > 学校 > 专业"。在哪里上学往往就在哪里就业。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'local', label: '留在老家省内', desc: '离家近，生活成本低' },
+      { value: 'nearby', label: '去周边大城市', desc: '省会或邻省中心城市' },
+      { value: 'far', label: '愿意去更远的城市', desc: '只要学校好、专业对口就行' },
+      { value: 'unsure', label: '没想好，哪里好就业去哪里', desc: '完全以就业为导向' }
+    ]
+  },
+  {
+    id: 'personality', num: 10, title: '你觉得自己更像下面哪种人？',
+    why: '性格不是好坏之分，而是适合做什么。想一想：你更喜欢一个人安静待着，还是和朋友们出去玩？',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'introvert', label: '安静型 🤫', desc: '喜欢一个人琢磨事情，能坐得住' },
+      { value: 'middle', label: '均衡型 🙂', desc: '该说话时能说，该安静时也能沉下心来' },
+      { value: 'extrovert', label: '活跃型 🗣️', desc: '爱聊天、喜欢热闹，能和各种人打交道' }
+    ]
+  },
+  {
+    id: 'hands_or_brain', num: 11, title: '你更喜欢"动手做"还是"动脑想"？',
+    why: '这个偏好直接影响你适合的专业类型。喜欢动手的人适合工科/技术类；喜欢思考分析的人适合理科/管理类。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'hands', label: '🔧 动手做', desc: '拆东西、修东西、做实验……干活的感觉让我兴奋' },
+      { value: 'brain', label: '🧠 动脑想', desc: '分析问题、研究规律、看数据……思考的过程让我有成就感' },
+      { value: 'people', label: '🤝 和人打交道', desc: '聊天、沟通、组织活动……和人互动时最有活力' },
+      { value: 'mix', label: '🔄 都行，看心情', desc: '没有明显偏好' }
+    ]
+  },
+  {
+    id: 'physical', num: 12, title: '身体条件和体力情况如何？',
+    why: '铁路、建筑、机电等高就业率专业很多需要在户外/车间工作，对体力有要求。提前了解能避免入学后后悔。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'strong', label: '💪 身体好，能吃苦', desc: '能接受户外工作、倒班、体力劳动' },
+      { value: 'normal', label: '👌 一般，适当体力活可以', desc: '不怕累，但不希望长期高强度体力劳动' },
+      { value: 'weak', label: '🏠 更适合室内工作', desc: '身体一般或有特殊情况' }
+    ]
+  },
+  {
+    id: 'stability', num: 13, title: '更看重稳定还是高薪？',
+    why: '这是张雪峰"灵魂拷问"之一——体制内还是体制外？想清楚这个，专业方向就清晰一大半了。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'stable', label: '🏛️ 稳定优先', desc: '希望进国企/央企/事业单位' },
+      { value: 'balanced', label: '⚖️ 兼顾稳定和收入', desc: '有保底的稳定性，同时收入也说得过去' },
+      { value: 'high_pay', label: '💰 收入优先', desc: '愿意承担不稳定性，只要挣得多' }
+    ]
+  },
+  {
+    id: 'interest', num: 14, title: '日常生活中，对什么事情比较感兴趣？（可多选）',
+    why: '兴趣不一定能当饭吃，但完全没兴趣的事情很难坚持学下来。',
+    type: 'multi', section: 'self',
+    options: [
+      { value: 'machine', label: '🔧 拆装机器/修东西', desc: '喜欢动手，对机械结构好奇' },
+      { value: 'computer', label: '💻 电脑/手机/游戏/编程', desc: '对数码产品、软件、互联网感兴趣' },
+      { value: 'car', label: '🚗 汽车/新能源车', desc: '喜欢研究汽车' },
+      { value: 'electric', label: '⚡ 电路/电器/电子产品', desc: '喜欢接线、修电器' },
+      { value: 'medical', label: '🏥 医疗/健康/心理', desc: '对医学、护理、心理学好奇' },
+      { value: 'art_design', label: '🎨 设计/美术/影视', desc: '喜欢画画、设计、拍视频' },
+      { value: 'business', label: '💼 做生意/赚钱/投资', desc: '对商业运作有兴趣' },
+      { value: 'outdoor', label: '🏗️ 户外/建筑/工地', desc: '坐不住，喜欢在外面跑' },
+      { value: 'train', label: '🚂 铁路/地铁/交通', desc: '对交通运输系统好奇' },
+      { value: 'education', label: '📖 教书/带孩子/培训', desc: '喜欢教别人、分享知识' },
+      { value: 'none', label: '😶 没啥特别兴趣', desc: '都行，能挣钱就行' }
+    ]
+  },
+  {
+    id: 'dream_life', num: 15, title: '想象一下10年后，你最理想的工作日是什么样的？',
+    why: '这个问题看起来很"虚"，但其实非常有用。你对未来生活方式的想象，往往比"喜欢什么科目"更能说明你适合什么职业。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'office', label: '🖥️ 坐在写字楼里，对着电脑处理工作', desc: '干净体面，朝九晚五' },
+      { value: 'workshop', label: '🏭 在车间/工厂里操作设备和机器', desc: '动手实操，技术过硬' },
+      { value: 'outdoor_field', label: '🚜 在户外/现场解决实际问题', desc: '跑工地、做调试' },
+      { value: 'freelance', label: '☕ 自由职业，时间灵活', desc: '不受束缚，靠本事吃饭' },
+      { value: 'social', label: '🤝 每天和不同的人打交道', desc: '谈合作、做服务' },
+      { value: 'boss', label: '👔 当老板，管理自己的团队', desc: '有决策权' },
+      { value: 'unsure', label: '🤷 完全想不出来', desc: '没关系，很多人都想不出来' }
+    ]
+  },
+  {
+    id: 'dealbreaker', num: 16, title: '有没有绝对不能接受的工作条件？（可多选）',
+    why: '排除法比选择法更有效。先明确底线——哪些坚决不干，剩下的就是可选范围。',
+    type: 'multi', section: 'self',
+    options: [
+      { value: 'outdoor', label: '❌ 不能接受长期户外/工地工作' },
+      { value: 'night_shift', label: '❌ 不能接受三班倒/夜班' },
+      { value: 'far_home', label: '❌ 不能接受离家太远的工作' },
+      { value: 'low_pay', label: '❌ 不能接受月薪低于4000元' },
+      { value: 'dangerous', label: '❌ 不能接受有安全风险的工作' },
+      { value: 'boring', label: '❌ 不能接受每天重复同样的事' },
+      { value: 'none', label: '✅ 都能接受，能赚钱就行' }
+    ]
+  },
+  {
+    id: 'study_more', num: 17, title: '毕业后，有没有继续提升学历的打算？',
+    why: '如果有专升本/考研打算，专业选择时需要考虑对口的升学通道和难度。',
+    type: 'single', section: 'self',
+    options: [
+      { value: 'no', label: '不打算，毕业直接就业', desc: '学一门技术就够了' },
+      { value: 'maybe', label: '看情况，有机会就试试', desc: '先就业，再考虑提升' },
+      { value: 'yes', label: '一定要继续深造', desc: '目标是更高学历' }
+    ]
+  },
+
+  // Part 4: Open
+  {
+    id: 'family_wish', num: 18, title: '家长对专业/职业有什么特别的期望或要求？',
+    why: '家长的意见在志愿填报中权重很大。提前了解可以避免出分后家庭内部"开战"。',
+    type: 'text', section: 'open', required: false,
+    placeholder: '比如：\n· 爸妈希望我留在省内\n· 家里人觉得学计算机好\n· 父母希望进国企\n· 没什么特别要求'
+  },
+  {
+    id: 'role_model', num: 19, title: '身边有没有你特别羡慕的人？他们是做什么的？',
+    why: '你羡慕的人往往映射了你内心的价值观和方向感。',
+    type: 'text', section: 'open', required: false,
+    placeholder: '比如：\n· 隔壁邻居家哥哥在铁路局上班，工作稳定\n· 我表姐做程序员，工资挺高的\n· 没有特别羡慕的人'
+  },
+  {
+    id: 'anything_else', num: 20, title: '还有什么想补充的？（比如身体状况、特长、顾虑等）',
+    why: '每个考生都有独特的情况。这些"小细节"可能直接影响专业选择。',
+    type: 'text', section: 'open', required: false,
+    placeholder: '比如：\n· 我有点色弱\n· 我数学还行但英语很差\n· 我其实想当兵，大学在读可以吗？\n· 我对未来没想法，很迷茫\n· 没了，就这些'
+  }
+];
+
+// ===== State =====
+const answers = {};
+const totalCount = questions.length;
+
+// Required: non-text, non-score_table, and required !== false
+const requiredIds = questions
+  .filter(q => q.required !== false && q.type !== 'text' && q.type !== 'score_table')
+  .map(q => q.id);
+
+// ===== Render =====
+function renderQuestions() {
+  const container = document.getElementById('questionsContainer');
+  let html = '';
+
+  for (const sec of sections) {
+    html += `<div class="section-block">
+      <div class="section-header">
+        <h2>${sec.title}</h2>
+        <p>${sec.subtitle}</p>
+      </div>`;
+
+    const secQuestions = questions.filter(q => q.section === sec.id);
+    for (const q of secQuestions) {
+      const optionalTag = q.required === false ? '<span class="q-optional">（选填）</span>' : '';
+      let bodyHTML = '';
+
+      if (q.type === 'single') {
+        bodyHTML = `<div class="options" data-qid="${q.id}" data-type="single">
+          ${q.options.map(opt => `
+            <div class="option" data-value="${opt.value}" onclick="selectOption('${q.id}','${opt.value}',this)">
+              <div class="option-radio"></div>
+              <div>
+                <div class="option-text">${opt.label}</div>
+                ${opt.desc ? `<div class="option-desc">${opt.desc}</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>`;
+      } else if (q.type === 'multi') {
+        bodyHTML = `<div class="options" data-qid="${q.id}" data-type="multi">
+          ${q.options.map(opt => `
+            <div class="option" data-value="${opt.value}" onclick="toggleOption('${q.id}','${opt.value}',this)">
+              <div class="option-checkbox">✓</div>
+              <div>
+                <div class="option-text">${opt.label}</div>
+                ${opt.desc ? `<div class="option-desc">${opt.desc}</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>`;
+      } else if (q.type === 'text') {
+        bodyHTML = `<textarea class="text-input" data-qid="${q.id}" placeholder="${q.placeholder || '请输入...'}" oninput="textInput('${q.id}',this)"></textarea>`;
+      } else if (q.type === 'input') {
+        bodyHTML = `<div class="input-wrap">
+          <input type="text" class="short-input" data-qid="${q.id}" placeholder="${q.placeholder || ''}" oninput="shortInput('${q.id}',this)">
+          ${q.inputHint ? `<div class="input-hint">${q.inputHint}</div>` : ''}
+        </div>`;
+      } else if (q.type === 'select') {
+        bodyHTML = `<div class="select-wrap">
+          <select class="custom-select" data-qid="${q.id}" onchange="selectDropdown('${q.id}',this)">
+            <option value="" disabled selected>请选择...</option>
+            ${q.options.map(opt => `<option value="${opt.value}">${opt.label}</option>`).join('')}
+          </select>
+        </div>`;
+      } else if (q.type === 'score_table') {
+        const subjects = ['语文','数学','英语'];
+        bodyHTML = `<div class="score-table-wrap">
+          ${q.tableGuide ? `<div class="table-guide"><span class="guide-icon">📝</span><span>${q.tableGuide}</span></div>` : ''}
+          <div class="score-table-scroll">
+            <table class="score-table">
+              <thead><tr>
+                <th class="th-exam">考试名称</th>
+                ${subjects.map(s => `<th>${s}</th>`).join('')}
+                <th>总分</th>
+                <th>年级排名</th>
+              </tr></thead>
+              <tbody>
+                ${[0,1,2].map(i => `<tr>
+                  <td><input type="text" class="score-input exam-name-input" placeholder="${['如：期末考试','如：月考','如：模拟考'][i]}" data-qid="score_table" data-row="${i}" data-field="examName" oninput="scoreInput()"></td>
+                  ${subjects.map(s => `<td><input type="text" class="score-input" placeholder="分数" data-qid="score_table" data-row="${i}" data-field="score_${s}" oninput="scoreInput()"></td>`).join('')}
+                  <td><input type="text" class="score-input" placeholder="总分" data-qid="score_table" data-row="${i}" data-field="totalScore" oninput="scoreInput()"></td>
+                  <td><input type="text" class="score-input" placeholder="如：150/800" data-qid="score_table" data-row="${i}" data-field="rank" oninput="scoreInput()"></td>
+                </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+          <p class="score-note">💡 提示：只需填你选考的科目成绩，不记得精确分数写个大概数就行。</p>
+        </div>`;
+      }
+
+      html += `<div class="q-section" style="animation-delay:${q.num * 0.05}s">
+        <div class="q-card" id="card-${q.id}">
+          <div class="q-header">
+            <div class="q-num">${q.num}</div>
+            <div class="q-title">${q.title} ${optionalTag}</div>
+            <div class="q-check-icon">✓</div>
+          </div>
+          <div class="q-body">
+            <div class="q-why"><span class="why-icon">💡</span><span>${q.why}</span></div>
+            ${bodyHTML}
+          </div>
+        </div>
+      </div>`;
+    }
+    html += '</div>';
+  }
+  container.innerHTML = html;
+}
+
+// ===== Interactions =====
+function selectOption(qid, value, el) {
+  const card = document.getElementById('card-' + qid);
+  card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[qid] = value;
+  card.classList.add('answered');
+  updateProgress();
+}
+
+function toggleOption(qid, value, el) {
+  const card = document.getElementById('card-' + qid);
+  if (value === 'none') {
+    card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[qid] = ['none'];
+  } else {
+    const noneOpt = card.querySelector('.option[data-value="none"]');
+    if (noneOpt) noneOpt.classList.remove('selected');
+    el.classList.toggle('selected');
+    const selected = card.querySelectorAll('.option.selected');
+    answers[qid] = Array.from(selected).map(o => o.dataset.value);
+    if (answers[qid].length === 0) {
+      delete answers[qid];
+      card.classList.remove('answered');
+      updateProgress();
+      return;
+    }
+  }
+  card.classList.add('answered');
+  updateProgress();
+}
+
+function textInput(qid, el) {
+  const card = document.getElementById('card-' + qid);
+  if (el.value.trim()) {
+    answers[qid] = el.value.trim();
+    card.classList.add('answered');
+  } else {
+    delete answers[qid];
+    card.classList.remove('answered');
+  }
+  updateProgress();
+}
+
+function shortInput(qid, el) {
+  const card = document.getElementById('card-' + qid);
+  if (el.value.trim()) {
+    answers[qid] = el.value.trim();
+    card.classList.add('answered');
+  } else {
+    delete answers[qid];
+    card.classList.remove('answered');
+  }
+  updateProgress();
+}
+
+function selectDropdown(qid, el) {
+  const card = document.getElementById('card-' + qid);
+  if (el.value) {
+    answers[qid] = el.value;
+    card.classList.add('answered');
+  } else {
+    delete answers[qid];
+    card.classList.remove('answered');
+  }
+  updateProgress();
+}
+
+function scoreInput() {
+  const inputs = document.querySelectorAll('input[data-qid="score_table"]');
+  const rows = [{},{},{}];
+  let hasData = false;
+  inputs.forEach(inp => {
+    const row = parseInt(inp.dataset.row);
+    const field = inp.dataset.field;
+    const val = inp.value.trim();
+    if (val) hasData = true;
+    rows[row][field] = val;
+  });
+  const card = document.getElementById('card-score_table');
+  if (hasData) {
+    answers['score_table'] = rows;
+    card.classList.add('answered');
+  } else {
+    delete answers['score_table'];
+    card.classList.remove('answered');
+  }
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = Object.keys(answers).length;
+  const pct = Math.round((answered / totalCount) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressCount').textContent = answered + '/' + totalCount;
+
+  const allRequired = requiredIds.every(id => answers[id]);
+  document.getElementById('btnSubmit').disabled = !allRequired;
+
+  const remaining = requiredIds.filter(id => !answers[id]).length;
+  const hint = document.getElementById('submitHint');
+  if (remaining > 0) {
+    hint.textContent = '还有 ' + remaining + ' 道必填题未完成';
+  } else {
+    hint.textContent = '✅ 必填题已全部完成，可以提交了！';
+  }
+}
+
+// ===== Generate Report =====
+document.getElementById('btnSubmit').addEventListener('click', generateReport);
+
+function generateReport() {
+  const labelMap = {};
+  questions.forEach(q => {
+    if (q.options) {
+      q.options.forEach(o => {
+        labelMap[q.id + '_' + o.value] = o.label + (o.desc ? '（' + o.desc + '）' : '');
+      });
+    }
+  });
+
+  function getLabel(qid, val) { return labelMap[qid + '_' + val] || val; }
+
+  function getAnswer(qid) {
+    const a = answers[qid];
+    if (!a) return '未作答';
+    if (Array.isArray(a)) return a.map(v => getLabel(qid, v)).join('、');
+    const q = questions.find(q => q.id === qid);
+    if (q.type === 'text' || q.type === 'input') return a;
+    if (q.type === 'select') return getLabel(qid, a);
+    if (q.type === 'score_table') {
+      const rows = a;
+      const lines = [];
+      rows.forEach((row, i) => {
+        const parts = [];
+        Object.entries(row).forEach(([k,v]) => {
+          if (v && k !== 'examName') {
+            const label = k.startsWith('score_') ? k.replace('score_','') : k === 'totalScore' ? '总分' : k === 'rank' ? '排名' : k;
+            parts.push(label + ':' + v);
+          }
+        });
+        if (parts.length > 0) {
+          lines.push('  ' + (row.examName || '考试' + (i+1)) + '：' + parts.join(' | '));
+        }
+      });
+      return lines.length > 0 ? '\n' + lines.join('\n') : '未填写';
+    }
+    return getLabel(qid, a);
+  }
+
+  let report = '══════════════════════════════════\n';
+  report += '   📊  考 生 画 像 报 告（完整版）\n';
+  report += '══════════════════════════════════\n\n';
+
+  // Basic info summary
+  report += '📋 基本信息\n';
+  report += '─────────────────────────────\n';
+  report += '  省份：' + (answers.province || '未填') + '\n';
+  report += '  学校：' + (answers.school || '未填') + '\n';
+  report += '  性别：' + getAnswer('gender') + '\n';
+  report += '  高考模式：' + getAnswer('exam_type') + '\n';
+  report += '  选科：' + getAnswer('subjects') + '\n';
+  report += '  成绩段位：' + getAnswer('score_level') + '\n';
+  report += '\n';
+
+  // Score table
+  report += '📊 学业成绩\n';
+  report += '─────────────────────────────\n';
+  report += '  ' + getAnswer('score_table') + '\n\n';
+
+  // Self-cognition questions
+  const selfQuestions = [
+    { title: '💰 家庭条件', qid: 'family' },
+    { title: '🏙️ 就业地域意愿', qid: 'city' },
+    { title: '🧠 性格类型', qid: 'personality' },
+    { title: '🔧 动手vs动脑偏好', qid: 'hands_or_brain' },
+    { title: '💪 身体和体力条件', qid: 'physical' },
+    { title: '🎯 稳定 vs 高薪', qid: 'stability' },
+    { title: '⭐ 兴趣倾向', qid: 'interest' },
+    { title: '💭 10年后理想工作日', qid: 'dream_life' },
+    { title: '🚫 底线排除', qid: 'dealbreaker' },
+    { title: '📚 深造意愿', qid: 'study_more' }
+  ];
+
+  report += '🧭 自我认知\n';
+  report += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+
+  selfQuestions.forEach(sq => {
+    report += sq.title + '\n';
+    report += '─────────────────────────────\n';
+    report += '  回答：' + getAnswer(sq.qid) + '\n\n';
+  });
+
+  // Open questions
+  report += '💬 补充说明\n';
+  report += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+
+  report += '👨‍👩‍👦 家长期望\n';
+  report += '─────────────────────────────\n';
+  report += '  ' + getAnswer('family_wish') + '\n\n';
+
+  report += '🌟 榜样人物\n';
+  report += '─────────────────────────────\n';
+  report += '  ' + getAnswer('role_model') + '\n\n';
+
+  report += '📝 其他补充\n';
+  report += '─────────────────────────────\n';
+  report += '  ' + getAnswer('anything_else') + '\n\n';
+
+  report += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+  report += '📌 综合判断\n';
+  report += '─────────────────────────────\n';
+  report += '  基于以上 20 题回答，我们将结合考生的：\n';
+  report += '  ✓ 基本信息 → 定位省份政策和可选范围\n';
+  report += '  ✓ 学业成绩 → 发现学科优势\n';
+  report += '  ✓ 家庭条件 → 确定试错空间\n';
+  report += '  ✓ 地域意愿 → 筛选院校范围\n';
+  report += '  ✓ 性格特质 → 匹配岗位类型\n';
+  report += '  ✓ 动手/动脑偏好 → 确定专业大类\n';
+  report += '  ✓ 体力条件 → 排除不适合的工种\n';
+  report += '  ✓ 就业期望 → 确定国企/民企方向\n';
+  report += '  ✓ 兴趣倾向 → 在可选范围内优先推荐\n';
+  report += '  ✓ 生涯愿景 → 匹配长期发展路径\n';
+  report += '  ✓ 底线排除 → 硬性过滤不可接受的方向\n';
+  report += '  ✓ 深造意愿 → 考虑升学通道\n';
+  report += '\n  …重新生成个性化的专业和院校推荐方案。\n\n';
+  report += '══════════════════════════════════\n';
+  report += '  报告生成时间：' + new Date().toLocaleString('zh-CN') + '\n';
+  report += '  志选 ZhiXuan · AI 高考方向推荐系统\n';
+  report += '══════════════════════════════════';
+
+  document.getElementById('resultContent').textContent = report;
+  document.getElementById('resultArea').classList.add('show');
+  document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyResult() {
+  const text = document.getElementById('resultContent').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target.closest('.btn-submit');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ 已复制到剪贴板！';
+    setTimeout(() => btn.innerHTML = orig, 2000);
+  });
+}
+
+// ===== Scroll shadow =====
+window.addEventListener('scroll', () => {
+  const wrap = document.getElementById('progressWrap');
+  if (window.scrollY > 200) {
+    wrap.classList.add('scrolled');
+  } else {
+    wrap.classList.remove('scrolled');
+  }
+});
+
+// ===== Init =====
+renderQuestions();
+updateProgress();
+</script>
+</body>
+</html>
