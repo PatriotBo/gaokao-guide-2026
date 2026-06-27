@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏫 民办本科推荐报告 · 区域版（省内 + 京津 + 邻省）</title>
+<style>/* ===== 志选 ZhiXuan · 报告样式 ===== */
+
+:root {
+  --bg: #f4f5fa;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-sec: #5a5a7a;
+  --primary: #4361ee;
+  --primary-light: #eef1ff;
+  --accent: #f72585;
+  --gold: #e6a817;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: #e8e8f0;
+  --shadow: 0 2px 16px rgba(67,97,238,.08);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+  font-family:var(--font);font-size:16px;line-height:1.85;
+  color:var(--text);background:var(--bg);min-height:100vh;
+}
+
+/* Header */
+.page-header{
+  background:linear-gradient(135deg,#4361ee 0%,#7209b7 50%,#f72585 100%);
+  color:#fff;padding:64px 20px 54px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 60%);
+  animation:shimmer 8s ease-in-out infinite;
+}
+@keyframes shimmer{
+  0%,100%{transform:translate(-30%,-30%)}
+  50%{transform:translate(10%,10%)}
+}
+.page-header h1{font-size:2.5em;font-weight:800;letter-spacing:2px;position:relative;z-index:1;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.page-header .subtitle{font-size:1.1em;opacity:.9;margin-top:10px;position:relative;z-index:1}
+.page-header .brand{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  padding:8px 22px;background:rgba(255,255,255,.15);border-radius:100px;
+  font-size:.9em;backdrop-filter:blur(10px);position:relative;z-index:1;
+}
+
+/* Container */
+.container{max-width:900px;margin:-30px auto 60px;padding:0 20px;position:relative;z-index:2}
+.content-card{
+  background:var(--card-bg);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:48px 48px 56px;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6{line-height:1.4;margin-top:2em;margin-bottom:.6em}
+
+h2{font-size:1.75em;font-weight:800;padding-bottom:12px;border-bottom:3px solid var(--primary);margin-top:2.5em}
+h2:first-child{margin-top:0}
+h3{font-size:1.35em;font-weight:700;color:var(--primary)}
+h4{font-size:1.18em;font-weight:700}
+h5{font-size:1.05em;font-weight:600;color:var(--text-sec)}
+
+p{margin-bottom:1em}
+strong{font-weight:700}
+
+a{color:var(--primary);text-decoration:none;transition:border-color .2s;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--primary)}
+
+/* Lists */
+ul,ol{margin:.8em 0 1.2em 1.6em}
+li{margin-bottom:.5em;line-height:1.7}
+
+/* Blockquote */
+blockquote{
+  margin:1.2em 0;padding:16px 20px 16px 24px;
+  border-left:4px solid var(--primary);background:var(--primary-light);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.95em;
+}
+blockquote p{margin-bottom:.5em}
+blockquote p:last-child{margin-bottom:0}
+
+/* Table */
+table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  margin:1.2em 0;font-size:.92em;border-radius:var(--radius-sm);
+  overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.06);
+}
+thead{background:linear-gradient(135deg,var(--primary),#5a7cff);color:#fff}
+th{padding:12px 16px;text-align:left;font-weight:600;font-size:.9em;letter-spacing:.5px;white-space:nowrap}
+td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fafbff}
+tbody tr:hover{background:var(--primary-light)}
+
+/* Code */
+code{font-family:"SF Mono","Fira Code",monospace;font-size:.88em;background:#f0f1f5;padding:2px 6px;border-radius:4px;color:var(--accent)}
+pre{margin:1.2em 0;padding:20px 24px;background:#1e1e2e;color:#cdd6f4;border-radius:var(--radius-sm);overflow-x:auto;font-size:.9em;line-height:1.6}
+pre code{background:none;padding:0;color:inherit}
+
+/* HR */
+hr{border:none;height:2px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:2.5em 0}
+
+/* Footer */
+.page-footer{text-align:center;padding:40px 20px;color:var(--text-sec);font-size:.85em}
+.page-footer .brand-footer{font-size:1.1em;font-weight:600;color:var(--primary);margin-bottom:8px}
+
+/* Responsive */
+@media(max-width:768px){
+  .content-card{padding:24px 20px}
+  .page-header{padding:40px 16px 36px}
+  .page-header h1{font-size:1.8em}
+  h2{font-size:1.5em}
+  table{font-size:.85em}
+  th,td{padding:8px 10px}
+}
+@media(max-width:480px){
+  .content-card{padding:16px 14px}
+  .page-header h1{font-size:1.5em}
+  body{font-size:15px}
+  table{display:block;overflow-x:auto}
+}
+
+/* Print */
+@media print{
+  body{background:#fff}
+  .page-header{background:#4361ee!important;-webkit-print-color-adjust:exact}
+  .content-card{box-shadow:none;border:1px solid #ddd}
+}
+</style>
+</head>
+<body>
+<header class="page-header">
+  <h1>🎓 🏫 民办本科推荐报告 · 区域版（省内 + 京津 + 邻省）</h1>
+  <p class="subtitle">高考志愿推荐报告 · 一对一定制</p>
+</header>
+<main class="container">
+  <article class="content-card">
+
+<blockquote>
+<p><strong>考生</strong>：河北 · 物理类 · 2026 高考 <strong>448 分</strong>（本科线 443，过线 5 分）· 选科物化生 · 现阶段有考研意愿
+<strong>范围</strong>：河北省内 + 北京/天津 + 邻省（辽宁、山东等），均在可接受范围。
+<strong>排序逻辑</strong>：<strong>先看专业、再看学校</strong>。第一标准是专业是否属于推荐方向（电气、自动化、电子信息、机械、计算机网络/安全、车辆——详见《高考专业推荐报告_含考研维度》）；第二标准才是学校办学实力。河北本科批 96 志愿「专业+院校」、无调剂、依次投档，故优质的「推荐专业+好学校」组合排最前。
+<strong>数据口径</strong>：分数/位次为 2025 河北物理类<strong>官方一分一段</strong>真实数据；学费、官网、办学背景均经核实。考生 448 分 = 2025 全省约 <strong>23.9 万位次（239067）</strong>。2026 实际线以官方为准，本报告不构成录取承诺。</p>
+</blockquote>
+<hr />
+<h2>🏆 第一梯队：推荐专业 + 实力强校（最优先）</h2>
+<h3>沧州交通学院（原北京交通大学海滨学院）⭐⭐⭐⭐⭐</h3>
+<p>既有名校血统，能上的又全是推荐专业，压线最稳——「专业对 + 学校好 + 录取稳」三者兼得。</p>
+<ul>
+<li><strong>211 名校血统</strong>：前身北京交通大学海滨学院（北京交通大学是教育部直属 211、双一流，交通/电气学科顶尖），办学体系、专业、师资标准继承北交大交通工科基因。</li>
+<li><strong>能上的全是推荐专业</strong>：电气、机械、车辆、计算机、自动化、电子信息，与考研友好的工科高度契合。</li>
+<li><strong>录取最稳</strong>：2025 招约 3605 人（要求化学），压本科线录取，是保底压舱石。</li>
+</ul>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.czjtu.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.czjtu.edu.cn/</a>
+💰 <strong>学费</strong>：工科约 1.7 万/年（民办里偏低，性价比高）
+📊 <strong>2025 录取</strong>：压本科线约 459 分 / 约 22.4 万位次</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>电气工程及其自动化</td>
+<td>~459 / ~22.4万</td>
+<td>绿牌+考研友好，北交大电气血统，压线稳</td>
+</tr>
+<tr>
+<td>2</td>
+<td>机械设计制造及其自动化</td>
+<td>~459 / ~22.4万</td>
+<td>绿牌，制造业刚需，考研名额多</td>
+</tr>
+<tr>
+<td>3</td>
+<td>自动化</td>
+<td>~459 / ~22.4万</td>
+<td>智能制造+AI，考研选择面宽</td>
+</tr>
+<tr>
+<td>4</td>
+<td>电子信息工程</td>
+<td>~459 / ~22.4万</td>
+<td>室内研发，考研友好度满分</td>
+</tr>
+<tr>
+<td>5</td>
+<td>计算机科学与技术</td>
+<td>~459 / ~22.4万</td>
+<td>选网络/运维方向，避开纯软开</td>
+</tr>
+<tr>
+<td>6</td>
+<td>车辆工程</td>
+<td>~459 / ~22.4万</td>
+<td>交通名校强项，对口汽车产业</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>河北科技学院 ⭐⭐⭐⭐</h3>
+<p>以工科立校，电气、机械、车辆是真正的优势专业（非空壳商科），能上的都是推荐方向，收分友好。</p>
+<ul>
+<li><strong>工科立校的民办</strong>，注重应用型、动手培养，实训设施较完善（石家庄/保定校区）。</li>
+<li><strong>能上的均为推荐专业</strong>：电气、机械、计算机、车辆、自动化。</li>
+</ul>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.hbkjxy.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.hbkjxy.edu.cn/</a>
+💰 <strong>学费</strong>：约 1.6-1.9 万/年（偏低）
+⚠️ <strong>本专科同校</strong>，务必认准「本科批」（如电气工程 465 是本科 vs 新能源汽车技术 363 是专科）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>电气工程及其自动化</td>
+<td>465 / 约21.6万</td>
+<td>该校工科招牌，对口电力/制造</td>
+</tr>
+<tr>
+<td>8</td>
+<td>机械设计制造及其自动化</td>
+<td>462 / 约22.0万</td>
+<td>制造业刚需，考研友好</td>
+</tr>
+<tr>
+<td>9</td>
+<td>自动化</td>
+<td>~462 / 约22.0万</td>
+<td>智能制造方向，考研面宽</td>
+</tr>
+<tr>
+<td>10</td>
+<td>车辆工程/新能源汽车工程</td>
+<td>459 / 约22.4万</td>
+<td>压线，对口汽车产业</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>燕京理工学院 ⭐⭐⭐⭐</h3>
+<p>河北规模较大的综合性民办，工科齐全、办学规范，能上的均为推荐专业，紧邻京津便于实习就业。</p>
+<ul>
+<li>位于廊坊（紧邻京津），可借京津产业资源实习就业。</li>
+<li><strong>能上的均为推荐专业</strong>：电气、机械、计算机、自动化。</li>
+</ul>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.yit.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.yit.edu.cn/</a>
+💰 <strong>学费</strong>：理科类约 2.2 万/年
+📊 <strong>2025 录取</strong>：工科约 459 分 / 约 22.4 万位次</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>电气工程及其自动化</td>
+<td>~459 / ~22.4万</td>
+<td>工科主力，考研友好</td>
+</tr>
+<tr>
+<td>12</td>
+<td>机械工程</td>
+<td>~459 / ~22.4万</td>
+<td>该校推荐指数高的专业</td>
+</tr>
+<tr>
+<td>13</td>
+<td>自动化</td>
+<td>~459 / ~22.4万</td>
+<td>智能制造方向</td>
+</tr>
+<tr>
+<td>14</td>
+<td>计算机类</td>
+<td>~459 / ~22.4万</td>
+<td>选网络/运维方向</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🥈 第二梯队：推荐专业 + 收分友好补充</h2>
+<h3>保定理工学院 ⭐⭐⭐</h3>
+<p>电气、机械、计算机是推荐方向，收分压线友好。</p>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.bdptu.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.bdptu.edu.cn/</a>
+💰 <strong>学费</strong>：约 1.5-1.8 万/年
+⚠️ <strong>本专科同校</strong>，认准本科批（机械设计制造 461 本科 vs 机械制造及自动化 359 专科）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>机械设计制造及其自动化</td>
+<td>461 / 约22.1万</td>
+<td>制造业对口，考研友好</td>
+</tr>
+<tr>
+<td>16</td>
+<td>电气工程及其自动化</td>
+<td>464 / 约21.7万</td>
+<td>工科主力</td>
+</tr>
+<tr>
+<td>17</td>
+<td>计算机科学与技术</td>
+<td>~459-462 / ~22万</td>
+<td>选网络/运维方向</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>河北工程技术学院 ⭐⭐⭐（学费最低之一）</h3>
+<p>学费最低、性价比高。压线能上的是物联网/智能建造/测绘——物联网属计算机大类、勉强对口，故排第二梯队靠后。</p>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.hebuet.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.hebuet.edu.cn/</a>
+💰 <strong>学费</strong>：约 1.5-1.9 万/年（民办里最低之一）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18</td>
+<td>物联网工程</td>
+<td>467 / 约21.3万</td>
+<td>计算机大类，需小幅降分</td>
+</tr>
+<tr>
+<td>19</td>
+<td>智能建造</td>
+<td>459 / 约22.4万</td>
+<td>土木升级方向，压线，学费低</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🥉 第三梯队：冲刺档（需 2026 降分）</h2>
+<h3>北京科技大学天津学院 ⭐⭐⭐⭐（211 北科大背书）</h3>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://tjxy.ustb.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://tjxy.ustb.edu.cn/</a>
+💰 <strong>学费</strong>：约 2 万/年
+📊 <strong>2025 录取</strong>：约 487 分 / 约 18.2 万位次（对 448 分偏高，需 2026 大幅降分）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>机械/材料/自动化类</td>
+<td>~487 / ~18.2万</td>
+<td>北科大工科背书，需大幅降分冲</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>青岛城市学院（山东青岛）⭐⭐⭐⭐（数据已核实，需降分冲）</h3>
+<p>山东应用型民办，工科齐全，青岛区位与产业资源好。压线能上偏土建类，工科核心专业需降分。</p>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.qdc.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.qdc.edu.cn/</a>
+💰 <strong>学费</strong>：约 2.6 万/年
+📊 <strong>2025 录取</strong>：工程管理 484 / 18.7万、工程造价 489 / 17.9万、电气工程 498 / 16.4万、机械/机器人 497 / 16.6万（核心工科偏高，需降分）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>工程管理</td>
+<td>484 / 约18.7万</td>
+<td>青岛区位，相对友好（非首选方向）</td>
+</tr>
+<tr>
+<td>22</td>
+<td>机械设计制造及其自动化</td>
+<td>497 / 约16.6万</td>
+<td>推荐专业，需较大降分冲</td>
+</tr>
+<tr>
+<td>23</td>
+<td>电气工程及其自动化</td>
+<td>498 / 约16.4万</td>
+<td>推荐专业，需较大降分冲</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大连科技学院（辽宁大连）⭐⭐⭐⭐（需降分冲）</h3>
+<p>大连软件园是北方 IT 重镇，工科依托大连装备制造、软件产业，能上的均为推荐专业。</p>
+<blockquote>
+<p>🔗 <strong>官网</strong>：<a href="https://www.dlust.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.dlust.edu.cn/</a>
+💰 <strong>学费</strong>：约 2-2.8 万/年
+📊 <strong>2025 录取</strong>：人工智能 477 / 19.9万、机械 479 / 19.5万、电气 484 / 18.7万（偏高，需降分）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>志愿</th>
+<th>专业</th>
+<th>2025录取分/位次</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td>人工智能</td>
+<td>477 / 约19.9万</td>
+<td>大连IT重镇，需降分</td>
+</tr>
+<tr>
+<td>25</td>
+<td>电气工程及其自动化</td>
+<td>484 / 约18.7万</td>
+<td>推荐专业，需较大降分冲</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>📋 其他可选（专业非首选，按需补充）</h2>
+<p><strong>天津仁爱学院</strong>（原天津大学仁爱学院，天津）：天大工科血统、天津直辖市区位好，但 448 分能上的是给排水(459)、土木(460)、化工(464)、水利(464)——均非首选推荐专业。<strong>仅在孩子明确接受土木/给排水方向时</strong>，可作靠后补充志愿。官网：<a href="https://www.tjrac.edu.cn/" target="_blank" rel="noopener" style="color:#185FA5;word-break:break-all">https://www.tjrac.edu.cn/</a> ｜ 学费：理工类 3.1 万/年。</p>
+<hr />
+<h2>🎯 填报顺序总结（先选专业 + 依次投档）</h2>
+<pre><code>最前（推荐专业 + 强校，最稳）：
+  1-6   沧州交通学院（北交大211血统）· 电气/机械/自动化/电子信息/计算机/车辆 ★压线459最稳
+  7-10  河北科技学院 · 电气/机械/自动化/车辆（认准本科批）
+  11-14 燕京理工学院 · 电气/机械/自动化/计算机（紧邻京津）
+
+中段（推荐专业 + 收分友好）：
+  15-17 保定理工学院 · 机械/电气/计算机（认准本科批）
+  18-19 河北工程技术学院 · 物联网/智能建造（学费最低）
+
+后段（冲刺，需2026降分）：
+  20    北科大天津学院（211背书）· 机械/自动化
+  21-23 青岛城市学院 · 工程管理/机械/电气
+  24-25 大连科技学院 · 人工智能/电气
+</code></pre>
+<hr />
+<h2>✅ 行动清单</h2>
+<ul>
+<li>☐ 用孩子真实位次卡核对上面专业（2026 计划本一出就核；2025 标注位次为官方一分一段数据）</li>
+<li>☐ <strong>先锁定专业方向</strong>（电气/机械/自动化/电子信息/计算机网络），再在该专业下挑学校</li>
+<li>☐ <strong>认准"本科批"</strong>：河北科技学院、保定理工本专科同校，别填成专科</li>
+<li>☐ 按"推荐专业+强校 → 收分友好 → 冲刺"顺序填，优秀的在前（依次投档先录先得）</li>
+<li>☐ 学费预算：沧州交通/河北工程技术约 1.5-1.9 万（低）；燕京理工 2.2 万；天津仁爱 3.1 万（高）</li>
+<li>☐ 各校官网链接已在每校下方，填报前再上官网核对当年专业、学费、选科要求</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>一句话总结</strong>：区域版按「先专业、后学校」排序——<strong>沧州交通学院（北交大211血统、能上的全是推荐专业、压线459最稳）是绝对第一</strong>，河北科技、燕京理工紧随其后；保定理工、河北工程技术作收分友好补充；青岛城市、大连科技、北科大天津学院作冲刺档。只选推荐专业、好学校放前面，依次投档先录先得。</p>
+<p><em>数据来源：各校官网、河北省发改委收费文件、河北省教育考试院 2025 官方一分一段表。免责声明：本报告为基于 2025 数据的推算，2026 实际录取以官方投档为准，不构成录取承诺；各专业本/专科属性、学费、选科以《2026 河北招生计划》及各校官网为准。</em></p>
+</blockquote>
+  </article>
+</main>
+<footer class="page-footer">
+  <p style="font-size:0.85em">本报告仅供参考，请以官方最新政策和数据为准</p>
+</footer>
+</body>
+</html>

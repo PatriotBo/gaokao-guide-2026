@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考专业方向推荐报告（含考研规划维度）</title>
+<style>/* ===== 志选 ZhiXuan · 报告样式 ===== */
+
+:root {
+  --bg: #f4f5fa;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-sec: #5a5a7a;
+  --primary: #4361ee;
+  --primary-light: #eef1ff;
+  --accent: #f72585;
+  --gold: #e6a817;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: #e8e8f0;
+  --shadow: 0 2px 16px rgba(67,97,238,.08);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+  font-family:var(--font);font-size:16px;line-height:1.85;
+  color:var(--text);background:var(--bg);min-height:100vh;
+}
+
+/* Header */
+.page-header{
+  background:linear-gradient(135deg,#4361ee 0%,#7209b7 50%,#f72585 100%);
+  color:#fff;padding:64px 20px 54px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 60%);
+  animation:shimmer 8s ease-in-out infinite;
+}
+@keyframes shimmer{
+  0%,100%{transform:translate(-30%,-30%)}
+  50%{transform:translate(10%,10%)}
+}
+.page-header h1{font-size:2.5em;font-weight:800;letter-spacing:2px;position:relative;z-index:1;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.page-header .subtitle{font-size:1.1em;opacity:.9;margin-top:10px;position:relative;z-index:1}
+.page-header .brand{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  padding:8px 22px;background:rgba(255,255,255,.15);border-radius:100px;
+  font-size:.9em;backdrop-filter:blur(10px);position:relative;z-index:1;
+}
+
+/* Container */
+.container{max-width:900px;margin:-30px auto 60px;padding:0 20px;position:relative;z-index:2}
+.content-card{
+  background:var(--card-bg);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:48px 48px 56px;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6{line-height:1.4;margin-top:2em;margin-bottom:.6em}
+
+h2{font-size:1.75em;font-weight:800;padding-bottom:12px;border-bottom:3px solid var(--primary);margin-top:2.5em}
+h2:first-child{margin-top:0}
+h3{font-size:1.35em;font-weight:700;color:var(--primary)}
+h4{font-size:1.18em;font-weight:700}
+h5{font-size:1.05em;font-weight:600;color:var(--text-sec)}
+
+p{margin-bottom:1em}
+strong{font-weight:700}
+
+a{color:var(--primary);text-decoration:none;transition:border-color .2s;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--primary)}
+
+/* Lists */
+ul,ol{margin:.8em 0 1.2em 1.6em}
+li{margin-bottom:.5em;line-height:1.7}
+
+/* Blockquote */
+blockquote{
+  margin:1.2em 0;padding:16px 20px 16px 24px;
+  border-left:4px solid var(--primary);background:var(--primary-light);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.95em;
+}
+blockquote p{margin-bottom:.5em}
+blockquote p:last-child{margin-bottom:0}
+
+/* Table */
+table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  margin:1.2em 0;font-size:.92em;border-radius:var(--radius-sm);
+  overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.06);
+}
+thead{background:linear-gradient(135deg,var(--primary),#5a7cff);color:#fff}
+th{padding:12px 16px;text-align:left;font-weight:600;font-size:.9em;letter-spacing:.5px;white-space:nowrap}
+td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fafbff}
+tbody tr:hover{background:var(--primary-light)}
+
+/* Code */
+code{font-family:"SF Mono","Fira Code",monospace;font-size:.88em;background:#f0f1f5;padding:2px 6px;border-radius:4px;color:var(--accent)}
+pre{margin:1.2em 0;padding:20px 24px;background:#1e1e2e;color:#cdd6f4;border-radius:var(--radius-sm);overflow-x:auto;font-size:.9em;line-height:1.6}
+pre code{background:none;padding:0;color:inherit}
+
+/* HR */
+hr{border:none;height:2px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:2.5em 0}
+
+/* Footer */
+.page-footer{text-align:center;padding:40px 20px;color:var(--text-sec);font-size:.85em}
+.page-footer .brand-footer{font-size:1.1em;font-weight:600;color:var(--primary);margin-bottom:8px}
+
+/* Responsive */
+@media(max-width:768px){
+  .content-card{padding:24px 20px}
+  .page-header{padding:40px 16px 36px}
+  .page-header h1{font-size:1.8em}
+  h2{font-size:1.5em}
+  table{font-size:.85em}
+  th,td{padding:8px 10px}
+}
+@media(max-width:480px){
+  .content-card{padding:16px 14px}
+  .page-header h1{font-size:1.5em}
+  body{font-size:15px}
+  table{display:block;overflow-x:auto}
+}
+
+/* Print */
+@media print{
+  body{background:#fff}
+  .page-header{background:#4361ee!important;-webkit-print-color-adjust:exact}
+  .content-card{box-shadow:none;border:1px solid #ddd}
+}
+</style>
+</head>
+<body>
+<header class="page-header">
+  <h1>🎓 高考专业方向推荐报告（含考研规划维度）</h1>
+  <p class="subtitle">高考志愿推荐报告 · 一对一定制</p>
+</header>
+<main class="container">
+  <article class="content-card">
+
+<blockquote>
+<p><strong>考生情况</strong>：河北 · 物理类 · 2026 高考 448 分 · 选科物化生 · 农村普通家庭
+<strong>关键诉求</strong>：① 优先就业好、工作条件可接受（明确不接受三班倒/夜班、不接受安全风险）② 现阶段有考研意愿（虽未来可能改变，但专业选择需为考研留通道）
+<strong>报告日期</strong>：2026 年 6 月 27 日
+<strong>数据口径</strong>：就业率/薪资/绿牌信息综合自麦可思《中国大学生就业报告》近年数据及行业公开资料，分数线以 2025 河北真实投档为参考，2026 以官方为准</p>
+</blockquote>
+<hr />
+<h2>📋 一页纸总结（先看这里）</h2>
+<p>孩子的情况有两个关键约束，决定了专业选择的底层逻辑：</p>
+<ol>
+<li><strong>工作条件硬底线</strong>：不接受倒班/夜班、不接受安全风险 → 排除纯一线值守、高空带电、井下作业类岗位。</li>
+<li><strong>考研意愿</strong>：现在想考研 → 专业要满足"<strong>万一不考研，本科也能就业；如果考研，能放大价值</strong>"的双保险逻辑。</li>
+</ol>
+<p><strong>核心结论</strong>：</p>
+<ul>
+<li><strong>第一梯队（强烈推荐）</strong>：电气工程、自动化/机器人、机械设计制造——本科能就业、考研能翻身，是民办本科生洗掉第一学历的最佳跳板。</li>
+<li><strong>务实补充</strong>：电子信息工程（室内版电气）非常值得并入第一梯队一起考虑。</li>
+<li><strong>避坑提醒</strong>：计算机要选对细分（网络/安全，避开纯软件开发）；化工/材料只有铁了心考研深造才推荐（否则本科就业环境和薪资都受限）。</li>
+</ul>
+<blockquote>
+<p><strong>一句话</strong>：既然现在想考研，就优先选"本科托底、考研放大"的工科——电气、自动化、电子信息是这个逻辑下的最优解。</p>
+</blockquote>
+<hr />
+<h2>🎯 综合评分总览</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>专业</th>
+<th style="text-align: center;">就业率</th>
+<th style="text-align: center;">工资</th>
+<th style="text-align: center;">工作环境</th>
+<th style="text-align: center;">职业发展</th>
+<th style="text-align: center;">考研友好</th>
+<th>定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td>电气工程及其自动化</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;"><strong>5.0</strong></td>
+<td>🔥 强烈推荐</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td>自动化 / 机器人工程</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;"><strong>4.5</strong></td>
+<td>🔥 强烈推荐</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td>机械设计制造及其自动化</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">3.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;"><strong>4.5</strong></td>
+<td>🔥 强烈推荐</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td>计算机类（网络/信息安全）</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3.0</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td>车辆工程（新能源方向）</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.0</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td>化学工程与工艺 / 材料</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">3.0</td>
+<td style="text-align: center;">2.5</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;"><strong>4.5</strong></td>
+<td>⚠️ 须考研</td>
+</tr>
+<tr>
+<td style="text-align: center;">备1</td>
+<td>电子信息工程 / 通信工程</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;"><strong>5.0</strong></td>
+<td>⭐ 备选首推</td>
+</tr>
+<tr>
+<td style="text-align: center;">备2</td>
+<td>能源与动力工程</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.5</td>
+<td>⭐ 备选</td>
+</tr>
+<tr>
+<td style="text-align: center;">备3</td>
+<td>测控技术与仪器</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.5</td>
+<td>⭐ 备选</td>
+</tr>
+<tr>
+<td style="text-align: center;">备4</td>
+<td>数据科学与大数据技术</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3.5</td>
+<td>⭐ 备选</td>
+</tr>
+<tr>
+<td style="text-align: center;">备5</td>
+<td>工程造价 / 工程管理</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">3.0</td>
+<td>⭐ 备选</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>评分为 5 分制综合研判；「考研友好」指考研对口率、专业课难度、招生名额、上岸成熟度的综合。</p>
+</blockquote>
+<hr />
+<h1>第一部分：强烈推荐专业（6 个主推）</h1>
+<h2>🥇 1. 电气工程及其自动化</h2>
+<p><strong>这个专业是干什么的</strong>：研究电能的产生、传输、分配和应用。通俗说就是"和电打交道的高级工程师"——电力系统、工厂供配电、新能源发电、电气设备的设计、调试、运维都是它的舞台。</p>
+<p><strong>为什么排第一</strong>：</p>
+<ul>
+<li><strong>就业率 ⭐⭐⭐⭐⭐</strong>：连续多年是麦可思<strong>绿牌专业</strong>（就业率高、薪资高、满意度高的"红利专业"），就业率常年 95%+，是工科里最不愁出路的之一。</li>
+<li><strong>薪资 ⭐⭐⭐⭐</strong>：起薪中上，国家电网、南方电网、电力设计院、发电集团（华能/大唐/国电投）、电气设备厂都是稳定的高薪去向。</li>
+<li><strong>工作条件 ⭐⭐⭐⭐</strong>：岗位多为"室内设计 + 现场调试"结合，<strong>设计院、运维管理岗不需要倒班、无安全风险</strong>，符合孩子底线（注意避开变电站一线值班这类倒班岗即可）。</li>
+<li><strong>职业发展 ⭐⭐⭐⭐⭐</strong>："有电的地方就要人"，越老越吃香。AI 时代算力中心爆发、新能源（风光储）扩张，"算电协同"已写入国家新基建，电气人才需求被持续放大。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐⭐（关键）</strong>：物理是核心基础，<strong>考研对口率极高</strong>。专业课固定（电路+电机学+电力系统分析），适合踏实复习。<strong>最重要的是——国家电网招聘对学历卡得越来越严，民办本科直接进国网很难，但"民办本科 → 985/211 电气硕士 → 国网/电力设计院"是一条极其成熟的翻身路径。</strong></li>
+</ul>
+<p><strong>适合什么样的孩子</strong>：想要稳定 + 体面 + 高确定性，愿意为进国企/电网考研深造的孩子。</p>
+<p><strong>典型岗位与工作内容</strong>：
+- 电气设计工程师——在设计院画电气图纸、做供配电方案（纯室内办公）
+- 电力系统运维工程师——电网/变电站的运行维护与技术管理
+- 新能源电气工程师——风电/光伏/储能项目的电气设计与并网调试
+- 电气设备研发——电气设备厂的产品设计与测试</p>
+<p><strong>可能去的单位</strong>：国家电网/南方电网、各电力设计院、华能/大唐等发电集团、电气设备制造企业、新能源公司。</p>
+<hr />
+<h2>🥈 2. 自动化 / 机器人工程</h2>
+<p><strong>这个专业是干什么的</strong>：研究怎么让机器、生产线自动运转——PLC 编程、工业机器人、自动控制系统、工业互联网都是它的核心。是"智能制造"的大脑。</p>
+<p><strong>为什么推荐</strong>：</p>
+<ul>
+<li><strong>就业率 ⭐⭐⭐⭐⭐ / 薪资 ⭐⭐⭐⭐</strong>：制造业、工业互联网、自动化产线集成商都抢人，就业面比电气更宽。</li>
+<li><strong>工作条件 ⭐⭐⭐⭐⭐</strong>：以系统调试、编程、集成为主，<strong>室内为主、不倒班、无安全风险</strong>，工作环境在工科里属于较好的。</li>
+<li><strong>职业发展 ⭐⭐⭐⭐⭐</strong>：智能制造是国家长期战略，"中国制造 2025"持续红利，自动化是其核心支撑。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐⭐</strong>：可考"控制科学与工程"，也可跨向人工智能、机器人等热门方向，<strong>考研选择面非常宽</strong>，进可攻退可守。</li>
+</ul>
+<p><strong>适合什么样的孩子</strong>：喜欢编程+硬件结合、想往"智能制造 + AI"方向靠的孩子。</p>
+<p><strong>典型岗位与工作内容</strong>：
+- 自动化系统工程师——给工厂设计、调试自动化控制系统
+- 工业机器人工程师——机械臂、AGV 的编程与集成
+- PLC 工程师——可编程控制器编程，让设备按节拍运转
+- 工业互联网工程师——设备联网、数据采集与智能监控</p>
+<p><strong>可能去的单位</strong>：自动化设备/系统集成企业、汽车厂、半导体设备厂、各类智能制造工厂、工业互联网公司。</p>
+<hr />
+<h2>🥉 3. 机械设计制造及其自动化</h2>
+<p><strong>这个专业是干什么的</strong>：机械产品和装备的设计、制造、自动化改造。是制造业最基础、最核心的"母专业"。</p>
+<p><strong>为什么推荐</strong>：</p>
+<ul>
+<li><strong>就业率 ⭐⭐⭐⭐⭐</strong>：同为<strong>绿牌专业</strong>，就业率最高，是最"饿不着"的工科——中国是制造业第一大国，这个基本盘 20 年不会变。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐⭐</strong>：机械工程是考研大热门，<strong>招生名额全国最多之一，相对好上岸</strong>。本科出身一般的孩子，机械考研是性价比很高的逆袭路。</li>
+<li><strong>职业发展 ⭐⭐⭐⭐</strong>：越老越吃香，与程序员"35 岁焦虑"反向。</li>
+</ul>
+<p><strong>短板（务必看清）</strong>：
+- <strong>工作环境 ⭐⭐⭐</strong>：本科直接就业可能要下车间，环境中等。
+- <strong>薪资 ⭐⭐⭐</strong>：起薪偏中等。</p>
+<blockquote>
+<p>💡 <strong>关键判断</strong>：机械的短板（环境、起薪）<strong>恰恰靠考研解决</strong>——考上硕士后做研发/工艺，环境和薪资都会质变。所以叠加孩子的考研意愿后，它依然排在第一梯队。<strong>如果不打算考研，机械的吸引力会下降一档。</strong></p>
+</blockquote>
+<p><strong>典型岗位与工作内容</strong>：
+- 机械设计工程师——用 CAD/SolidWorks 设计机械零件和装备（室内）
+- 工艺工程师——制定生产工艺、优化制造流程
+- 设备工程师——管理维护工厂自动化设备
+- 研发工程师（需考研）——新产品研发设计</p>
+<p><strong>可能去的单位</strong>：装备制造企业、汽车厂、能源央企、半导体/新能源设备厂、各类制造业。</p>
+<hr />
+<h2>✅ 4. 计算机类（网络工程 / 信息安全方向）</h2>
+<p><strong>这个专业是干什么的</strong>：注意——这里<strong>只推荐网络、信息安全、运维方向，明确避开纯软件开发</strong>。学的是网络规划、系统运维、网络安全攻防、云计算等。</p>
+<p><strong>为什么推荐（但排第 4）</strong>：</p>
+<ul>
+<li><strong>薪资 ⭐⭐⭐⭐⭐</strong>：IT 行业薪资天花板最高，对接孩子"对电脑感兴趣"的意愿。</li>
+<li><strong>就业率 ⭐⭐⭐⭐ / 工作条件 ⭐⭐⭐⭐</strong>：纯室内办公，无倒班无风险。信息安全全球缺口巨大，AI 不仅没替代反而催生大量"AI 安全"新岗位。</li>
+<li><strong>职业发展 ⭐⭐⭐⭐</strong>：网络安全责任重、需人担责，AI 难替代。</li>
+</ul>
+<p><strong>为什么不是第一梯队（重要）</strong>：
+- <strong>考研友好 ⭐⭐⭐（偏低）</strong>：计算机考研是<strong>全国卷王战场</strong>，408 统考难度极大，<strong>民办本科生跨考名校计算机非常吃力</strong>。
+- <strong>AI 冲击</strong>：纯软件开发岗被 AI 大幅压缩，所以必须主攻网络/安全/运维这些"动手+责任"属性强的细分。</p>
+<blockquote>
+<p>💡 <strong>决策提示</strong>：如果孩子<strong>以本科就业为主、考研为辅</strong>，计算机类（网络/安全）很好；如果<strong>铁了心要考研冲名校</strong>，它不是最优——电气、自动化的考研性价比更高。</p>
+</blockquote>
+<p><strong>典型岗位与工作内容</strong>：
+- 网络工程师——企业网络规划、设备配置、故障排查
+- 信息安全工程师——漏洞扫描、应急响应、攻防演练
+- 云运维工程师——云服务器、容器、监控系统管理
+- 系统集成实施工程师——到客户现场部署系统</p>
+<p><strong>可能去的单位</strong>：互联网公司、银行/政企 IT 部门、网络安全公司、云计算厂商、系统集成商。</p>
+<hr />
+<h2>✅ 5. 车辆工程（新能源汽车方向）</h2>
+<p><strong>这个专业是干什么的</strong>：汽车（尤其新能源车）的设计、研发、测试。新能源是国家战略风口，三电（电池/电机/电控）、智能驾驶是核心。</p>
+<p><strong>为什么推荐</strong>：</p>
+<ul>
+<li><strong>就业率 ⭐⭐⭐⭐ / 薪资 ⭐⭐⭐⭐</strong>：新能源汽车渗透率持续走高，研发、测试、技术岗需求旺盛。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐</strong>：可考车辆工程、动力工程，名额较多，对口性强。</li>
+<li><strong>职业发展 ⭐⭐⭐⭐</strong>：新能源是长期赛道。</li>
+</ul>
+<p><strong>注意</strong>：
+- <strong>工作环境 ⭐⭐⭐</strong>：要接触整车、实验台，部分岗位偏一线。
+- <strong>风险提示</strong>：整车制造端有产能过剩风险（新势力洗牌），<strong>研发/三电/智能驾驶方向更稳</strong>，本科建议为考研做准备，硕士后进核心研发岗。</p>
+<p><strong>典型岗位与工作内容</strong>：
+- 整车/零部件设计工程师——汽车结构、系统设计（室内）
+- 三电系统工程师（需考研更佳）——电池/电机/电控研发测试
+- 试验工程师——整车性能测试与标定
+- 智能驾驶相关（需深造）——感知/控制算法</p>
+<p><strong>可能去的单位</strong>：比亚迪/理想/吉利等车企、汽车零部件供应商、新能源科技公司。</p>
+<hr />
+<h2>⚠️ 6. 化学工程与工艺 / 材料类</h2>
+<p><strong>这个专业是干什么的</strong>：化工生产工艺、新材料研发。和孩子物化生选科<strong>最匹配</strong>（化学+生物背景对口）。</p>
+<p><strong>为什么列入但排最后</strong>：</p>
+<ul>
+<li><strong>考研友好 ⭐⭐⭐⭐⭐</strong>：化工、材料考研名额多、专业课对口、上岸相对友好，<strong>是考研深造导向的好选择</strong>。</li>
+<li><strong>职业发展 ⭐⭐⭐（依赖深造）</strong>：本科出路有限，硕博后进研究所/高端制造才有质变。</li>
+</ul>
+<p><strong>严重短板（必须正视）</strong>：
+- <strong>工作环境 ⭐⭐（最大问题）</strong>：本科直接就业多在化工厂，<strong>常有倒班、有一定安全要求</strong>——这与孩子"不接受倒班、不接受安全风险"的底线<strong>直接冲突</strong>。
+- <strong>薪资 ⭐⭐⭐</strong>：本科起薪偏低。</p>
+<blockquote>
+<p>⚠️ <strong>明确结论</strong>：这个专业<strong>"不考研约等于白读"</strong>，且本科就业环境不符合孩子底线。<strong>只有当孩子 100% 确定要一路读研深造（硕士甚至博士），并且能接受研究型/实验室工作，才推荐它</strong>。否则不建议本科直接就业。</p>
+</blockquote>
+<p><strong>典型岗位与工作内容</strong>：
+- 工艺工程师——化工生产工艺设计与优化
+- 研发工程师（需考研）——新材料、新配方研发
+- 质量/检测工程师——产品质量管控</p>
+<p><strong>可能去的单位</strong>：中石油/中石化、化工园区企业、新材料公司、科研院所（需深造）。</p>
+<hr />
+<h1>第二部分：备选扩展专业（5 个）</h1>
+<blockquote>
+<p>这 5 个是主推 6 专业之外的补位选择，<strong>均满足"不倒班、无安全风险、可考研"三条硬约束</strong>。用于"具体某校没有主推专业、或孩子有特定偏好"时填补志愿。</p>
+</blockquote>
+<h2>⭐ 备1. 电子信息工程 / 通信工程（备选首推，可并入第一梯队）</h2>
+<p><strong>是干什么的</strong>：电子设备、通信系统、信号处理、嵌入式系统的设计与开发。本质上是电气/自动化的"室内电子近亲"。</p>
+<ul>
+<li><strong>就业 ⭐⭐⭐⭐½ / 薪资 ⭐⭐⭐⭐½</strong>：通信、电子设备、嵌入式、芯片应用领域需求旺，薪资优于传统机械。</li>
+<li><strong>工作环境 ⭐⭐⭐⭐½</strong>：以室内研发、测试为主，<strong>完全符合不倒班、无风险的底线</strong>。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐⭐</strong>：信息与通信工程、电子科学与技术都是考研大类，名额多、对口强，<strong>是民办生考研冲一本/211 的成熟通道</strong>。</li>
+<li><strong>与孩子匹配度高</strong>：物理选科强相关，又对接"对电脑/数码感兴趣"的意愿。</li>
+</ul>
+<blockquote>
+<p>💡 <strong>强烈建议</strong>：如果孩子偏好坐办公室搞硬件电子，<strong>这个专业完全可以并入第一梯队，和电气、自动化一起作为冲刺主力。</strong></p>
+</blockquote>
+<p><strong>典型岗位</strong>：硬件工程师、嵌入式开发工程师、通信工程师、电子产品测试工程师。
+<strong>可能去的单位</strong>：华为/中兴等通信企业、电子设备厂、芯片设计/应用公司、消费电子企业。</p>
+<hr />
+<h2>⭐ 备2. 能源与动力工程</h2>
+<p><strong>是干什么的</strong>：能量转换与利用——火电、核电、新能源发电、暖通空调、动力机械。</p>
+<ul>
+<li><strong>就业 ⭐⭐⭐⭐½ / 职业发展 ⭐⭐⭐⭐½</strong>：电力系统是稳定大盘，国企需求长期存在，是电气的"近亲"。</li>
+<li><strong>工作环境 ⭐⭐⭐½</strong>：设计院/研发岗室内为主，但部分电厂岗位有值班，<strong>填报时要挑设计/研发方向，避开一线值班岗</strong>。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐</strong>：动力工程及工程热物理是对口考研大类，深造后进设计院/研究所是优质出路。</li>
+</ul>
+<p><strong>典型岗位</strong>：热能动力工程师、电厂技术岗、暖通设计工程师、新能源系统工程师。
+<strong>可能去的单位</strong>：发电集团、电力设计院、暖通/制冷企业、新能源公司。</p>
+<hr />
+<h2>⭐ 备3. 测控技术与仪器</h2>
+<p><strong>是干什么的</strong>：测量、控制、智能仪器仪表、自动检测技术——介于电子与自动化之间。</p>
+<ul>
+<li><strong>就业 ⭐⭐⭐⭐ / 工作环境 ⭐⭐⭐⭐</strong>：智能制造、自动检测、仪器仪表方向，实验室/室内调试为主，环境好。</li>
+<li><strong>考研友好 ⭐⭐⭐⭐½（隐藏优势）</strong>：仪器科学与技术考研<strong>竞争相对小、上岸友好</strong>，<strong>特别适合想考研、但又怕计算机/机械太卷的孩子</strong>——是"冷门好考"的性价比之选。</li>
+</ul>
+<p><strong>典型岗位</strong>：测控工程师、仪器仪表研发、智能检测工程师、质量检测工程师。
+<strong>可能去的单位</strong>：仪器仪表企业、智能制造工厂、检测机构、精密设备公司。</p>
+<hr />
+<h2>⭐ 备4. 数据科学与大数据技术</h2>
+<p><strong>是干什么的</strong>：海量数据的采集、处理、分析与建模。计算机大类的延伸，对接"对电脑感兴趣"。</p>
+<ul>
+<li><strong>薪资 ⭐⭐⭐⭐½ / 工作环境 ⭐⭐⭐⭐½</strong>：纯室内、薪资高，是计算机大类里相对不那么卷的细分。</li>
+<li><strong>要提醒（考研 ⭐⭐⭐½）</strong>：大数据考研多并入计算机/软件一级学科，<strong>408 统考依然很难</strong>，民办生跨考名校吃力；且对数学要求高，要孩子真的学得进数学和编程。</li>
+</ul>
+<blockquote>
+<p>适合"本科就业为主、考研为辅"且数学不弱的孩子。</p>
+</blockquote>
+<p><strong>典型岗位</strong>：数据分析师、数据开发工程师、BI 工程师、算法工程师（需深造）。
+<strong>可能去的单位</strong>：互联网公司、金融机构数据部门、大数据服务公司、企业数据中台。</p>
+<hr />
+<h2>⭐ 备5. 工程造价 / 工程管理</h2>
+<p><strong>是干什么的</strong>：工程项目的造价预算、成本控制、招投标、项目管理。</p>
+<ul>
+<li><strong>工作环境 ⭐⭐⭐⭐⭐（最大亮点）</strong>：<strong>纯室内办公、零安全风险、不倒班</strong>——是所有专业里最贴合孩子底线的。</li>
+<li><strong>职业发展</strong>：算造价、做预决算、招投标，越老越吃香，能考造价工程师等高含金量证书。</li>
+<li><strong>短板（考研 ⭐⭐⭐）</strong>：管理类考研偏文、专业认同度不如纯工科；行业受房地产周期影响。</li>
+</ul>
+<blockquote>
+<p>适合"想要安稳坐办公室 + 靠考证晋升"而非考研深造的孩子。</p>
+</blockquote>
+<p><strong>典型岗位</strong>：造价工程师、预算员、招投标专员、项目管理岗。
+<strong>可能去的单位</strong>：建筑施工企业、工程咨询/造价事务所、房地产公司、设计院经济部门。</p>
+<hr />
+<h1>第三部分：综合决策建议</h1>
+<h2>🧭 按孩子的不同倾向，怎么选</h2>
+<table>
+<thead>
+<tr>
+<th>如果孩子…</th>
+<th>首选方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>想稳定、为进国企/电网考研</td>
+<td><strong>电气工程</strong>（主1）/ 能源与动力（备2）</td>
+</tr>
+<tr>
+<td>喜欢编程+硬件、想搞智能制造+AI</td>
+<td><strong>自动化/机器人</strong>（主2）/ 电子信息（备1）</td>
+</tr>
+<tr>
+<td>想坐办公室搞电子硬件、且想考研</td>
+<td><strong>电子信息工程</strong>（备1）——强烈建议升入第一梯队</td>
+</tr>
+<tr>
+<td>想考研、又怕计算机太卷</td>
+<td><strong>测控技术与仪器</strong>（备3）——冷门好考</td>
+</tr>
+<tr>
+<td>以本科就业为主、对电脑感兴趣</td>
+<td>计算机网络/安全（主4）/ 数据科学（备4）</td>
+</tr>
+<tr>
+<td>铁了心零风险纯办公室、靠考证晋升</td>
+<td><strong>工程造价</strong>（备5）</td>
+</tr>
+<tr>
+<td>100% 确定一路读研深造</td>
+<td>化工/材料（主6）/ 机械（主3）</td>
+</tr>
+</tbody>
+</table>
+<h2>⚠️ 三条必须记住的原则</h2>
+<ol>
+<li><strong>专业首先要"保底"</strong>：万一大学后不想考研了，本科也得能就业——这正是电气、自动化、电子信息、机械胜过化工/材料的关键（后者高度依赖考研才有出路，风险大）。</li>
+<li><strong>考研是民办生洗第一学历的核心武器</strong>：选考研友好的专业（电气、自动化、电子信息、机械），本科进民办、考研冲一本/211，能真正翻身。</li>
+<li><strong>守住工作条件底线</strong>：所有方向都要避开倒班、安全风险岗位，填报时看清专业的具体培养方向。</li>
+</ol>
+<hr />
+<blockquote>
+<p><strong>核心建议</strong>：现阶段有考研意愿，就优先选"本科能托底、考研能放大"的工科。<strong>电气工程、自动化、电子信息工程是这个逻辑下的最优三选</strong>——本科进电力/制造/电子能就业，考研冲个好硕士就能洗掉民办第一学历，进国网、设计院或大厂研发。</p>
+</blockquote>
+<hr />
+<p><em>本报告仅供参考。就业率/薪资为行业综合研判，分数线为 2025 年参考数据，2026 年实际情况请以官方最新政策和招生计划为准。专业的具体培养方向和就业去向，请填报前在目标院校官网核实。</em></p>
+  </article>
+</main>
+<footer class="page-footer">
+  <p style="font-size:0.85em">本报告仅供参考，请以官方最新政策和数据为准</p>
+</footer>
+</body>
+</html>
